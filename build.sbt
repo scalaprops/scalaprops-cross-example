@@ -13,7 +13,7 @@ val example = crossProject(
     "-language:implicitConversions",
     "-Yno-adapted-args"
   ),
-  scalaVersion := "2.11.11",
+  scalaVersion := "2.11.12",
   resolvers += Opts.resolver.sonatypeReleases,
   name := "scalaprops-cross-example",
   libraryDependencies ++= Seq(
