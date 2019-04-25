@@ -9,6 +9,7 @@ script:
 - ./native/target/scala-2.11/scalaprops-cross-example-test-out
 jdk:
 - oraclejdk8
+- openjdk11
 cache:
   directories:
   - $HOME/.ivy2/cache
