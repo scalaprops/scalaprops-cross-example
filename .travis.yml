@@ -8,7 +8,7 @@ script:
 - ./native/target/scala-2.11/scalaprops-cross-example-out
 - ./native/target/scala-2.11/scalaprops-cross-example-test-out
 jdk:
-- oraclejdk8
+- openjdk8
 - openjdk11
 cache:
   directories:
