@@ -16,7 +16,7 @@ val example = crossProject(
   scalaVersion := "2.11.12",
   name := "scalaprops-cross-example",
   libraryDependencies ++= Seq(
-    "com.github.scalaprops" %%% "scalaprops" % "0.8.1" % "test"
+    "com.github.scalaprops" %%% "scalaprops" % "0.8.2" % "test"
   )
 ).nativeSettings(
   scalapropsNativeSettings
