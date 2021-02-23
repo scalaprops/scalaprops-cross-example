@@ -11,7 +11,6 @@ val example = crossProject(
     "-language:existentials",
     "-language:higherKinds",
     "-language:implicitConversions",
-    "-Yno-adapted-args"
   ),
   scalaVersion := "2.13.5",
   name := "scalaprops-cross-example",
