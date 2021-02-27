@@ -27,5 +27,5 @@ val exampleNative = example.native
 
 publishLocal := {}
 publish := {}
-publishArtifact in Compile := false
-publishArtifact in Test := false
+Compile / publishArtifact := false
+Test / publishArtifact := false
