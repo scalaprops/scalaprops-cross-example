@@ -1,5 +1,3 @@
-import sbtcrossproject.CrossPlugin.autoImport.crossProject
-
 val example = crossProject(
   JSPlatform, JVMPlatform, NativePlatform
 ).in(file(".")).settings(
