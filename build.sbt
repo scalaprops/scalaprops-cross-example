@@ -7,7 +7,6 @@ val example = crossProject(
   scalacOptions ++= Seq(
     "-deprecation",
     "-unchecked",
-    "-Xfuture",
     "-language:existentials",
     "-language:higherKinds",
     "-language:implicitConversions",
