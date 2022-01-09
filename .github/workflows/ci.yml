@@ -16,6 +16,8 @@ jobs:
       with:
         java-version: "adopt@1.8"
     - uses: coursier/cache-action@v6
-    - run: sbt exampleJVM/test exampleJS/test exampleNative/test exampleNative/nativeLink
+    - run: sbt "+ exampleJVM/test" "+ exampleJS/test" "+ exampleNative/test" "+ exampleNative/nativeLink"
     - run: ./native/target/scala-2.13/scalaprops-cross-example-out
     - run: ./native/target/scala-2.13/scalaprops-cross-example-test-out
+    - run: ./native/target/scala-3.1.0/scalaprops-cross-example-out
+    - run: ./native/target/scala-3.1.0/scalaprops-cross-example-test-out
