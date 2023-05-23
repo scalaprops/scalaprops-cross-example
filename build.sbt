@@ -10,7 +10,7 @@ val example = crossProject(
     "-language:implicitConversions",
   ),
   scalaVersion := "2.13.10",
-  crossScalaVersions += "3.2.2",
+  crossScalaVersions += "3.3.0",
   name := "scalaprops-cross-example",
   libraryDependencies ++= Seq(
     "com.github.scalaprops" %%% "scalaprops" % "0.9.1" % "test"
