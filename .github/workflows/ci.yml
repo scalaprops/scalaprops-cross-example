@@ -15,6 +15,7 @@ jobs:
         java-version: 8
         distribution: temurin
     - uses: coursier/cache-action@v6
+    - uses: sbt/setup-sbt@v1
     - run: sbt "+ exampleJVM/test" "+ exampleJS/test" "+ exampleNative/test" "+ exampleNative/nativeLink"
     - run: ./native/target/scala-2.13/scalaprops-cross-example
     - run: ./native/target/scala-2.13/scalaprops-cross-example-test
