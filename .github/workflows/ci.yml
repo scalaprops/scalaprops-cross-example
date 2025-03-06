@@ -19,5 +19,5 @@ jobs:
     - run: sbt "+ exampleJVM/test" "+ exampleJS/test" "+ exampleNative/test" "+ exampleNative/nativeLink"
     - run: ./native/target/scala-2.13/scalaprops-cross-example
     - run: ./native/target/scala-2.13/scalaprops-cross-example-test
-    - run: ./native/target/scala-3.6.3/scalaprops-cross-example
-    - run: ./native/target/scala-3.6.3/scalaprops-cross-example-test
+    - run: ./native/target/scala-3.6.4/scalaprops-cross-example
+    - run: ./native/target/scala-3.6.4/scalaprops-cross-example-test
