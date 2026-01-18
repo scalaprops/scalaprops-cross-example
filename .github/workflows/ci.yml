@@ -12,12 +12,12 @@ jobs:
     - uses: actions/checkout@v6
     - uses: actions/setup-java@v5
       with:
-        java-version: 8
+        java-version: 17
         distribution: temurin
     - uses: coursier/cache-action@v7
     - uses: sbt/setup-sbt@v1
     - run: sbt "+ exampleJVM/test" "+ exampleJS/test" "+ exampleNative/test" "+ exampleNative/nativeLink"
     - run: ./native/target/scala-2.13/scalaprops-cross-example
     - run: ./native/target/scala-2.13/scalaprops-cross-example-test
-    - run: ./native/target/scala-3.7.4/scalaprops-cross-example
-    - run: ./native/target/scala-3.7.4/scalaprops-cross-example-test
+    - run: ./native/target/scala-3.8.0/scalaprops-cross-example
+    - run: ./native/target/scala-3.8.0/scalaprops-cross-example-test
