@@ -9,7 +9,6 @@ val example = projectMatrix
       "-deprecation",
       "-unchecked",
       "-language:existentials",
-      "-language:higherKinds",
       "-language:implicitConversions",
     ),
     name := "scalaprops-cross-example",
