@@ -1,8 +1,8 @@
-val example = crossProject(
-  JSPlatform,
-  JVMPlatform,
-  NativePlatform
-).in(file("."))
+val scalaVersions = Seq("2.13.18", "3.8.4")
+
+val example = projectMatrix
+  .in(file("."))
+  .defaultAxes()
   .settings(
     scalapropsCoreSettings,
     scalacOptions ++= Seq(
@@ -12,22 +12,38 @@ val example = crossProject(
       "-language:higherKinds",
       "-language:implicitConversions",
     ),
-    scalaVersion := "2.13.18",
-    crossScalaVersions += "3.8.4",
     name := "scalaprops-cross-example",
     libraryDependencies ++= Seq(
-      "com.github.scalaprops" %%% "scalaprops" % "0.11.0" % "test"
+      "com.github.scalaprops" %% "scalaprops" % "0.11.0" % "test"
     )
   )
-  .nativeSettings(
+  .jvmPlatform(scalaVersions)
+  .jsPlatform(scalaVersions)
+  .nativePlatform(
+    scalaVersions,
     scalapropsNativeSettings
   )
 
-val exampleJVM = example.jvm
-val exampleJS = example.js
-val exampleNative = example.native
-
-publishLocal := {}
-publish := {}
-Compile / publishArtifact := false
-Test / publishArtifact := false
+val exampleRoot = rootProject.autoAggregate.settings(
+  Compile / scalaSource := baseDirectory.value / "dummy",
+  Test / scalaSource := baseDirectory.value / "dummy",
+  TaskKey[Unit]("testSequential") := Def
+    .sequential(
+      example
+        .allProjects()
+        .map(_._1)
+        .sortBy(_.id)
+        .flatMap(p =>
+          Seq[Def.Initialize[Task[Unit]]](
+            Def.task(streams.value.log.info(s"start ${p.id} test")),
+            (p / Test / testFull).map(_ => ())
+          )
+        )
+    )
+    .value,
+  autoScalaLibrary := false,
+  publishLocal := {},
+  publish := {},
+  Compile / publishArtifact := false,
+  Test / publishArtifact := false,
+)

@@ -21,13 +21,10 @@ jobs:
     - run: sbt
            -v
            --server
-           scalafmtSbtCheck
-           "+ scalafmtCheckAll"
-           "+ exampleJVM/test"
-           "+ exampleJS/test"
-           "+ exampleNative/test"
-           "+ exampleNative/nativeLink"
-    - run: ./native/target/scala-2.13/scalaprops-cross-example
-    - run: ./native/target/scala-2.13/scalaprops-cross-example-test
-    - run: ./native/target/scala-3.8.4/scalaprops-cross-example
-    - run: ./native/target/scala-3.8.4/scalaprops-cross-example-test
+           "all scalafmtSbtCheck scalafmtCheckAll"
+           testSequential
+           nativeLink
+    - run: ./target/out/native0.5/scala-2.13.18/scalaprops-cross-example/scalaprops-cross-example
+    - run: ./target/out/native0.5/scala-2.13.18/scalaprops-cross-example/scalaprops-cross-example-test
+    - run: ./target/out/native0.5/scala-3.8.4/scalaprops-cross-example/scalaprops-cross-example
+    - run: ./target/out/native0.5/scala-3.8.4/scalaprops-cross-example/scalaprops-cross-example-test
