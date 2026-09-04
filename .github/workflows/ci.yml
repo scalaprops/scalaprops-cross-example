@@ -24,7 +24,7 @@ jobs:
            "all scalafmtSbtCheck scalafmtCheckAll"
            testSequential
            nativeLink
-    - run: ./target/out/native0.5/scala-2.13.18/scalaprops-cross-example/scalaprops-cross-example
-    - run: ./target/out/native0.5/scala-2.13.18/scalaprops-cross-example/scalaprops-cross-example-test
+    - run: ./target/out/native0.5/scala-3.9.0/scalaprops-cross-example/scalaprops-cross-example
+    - run: ./target/out/native0.5/scala-3.9.0/scalaprops-cross-example/scalaprops-cross-example-test
     - run: ./target/out/native0.5/scala-3.9.0/scalaprops-cross-example/scalaprops-cross-example
     - run: ./target/out/native0.5/scala-3.9.0/scalaprops-cross-example/scalaprops-cross-example-test
