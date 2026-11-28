@@ -13,7 +13,7 @@ val example = projectMatrix
     ),
     name := "scalaprops-cross-example",
     libraryDependencies ++= Seq(
-      "com.github.scalaprops" %% "scalaprops" % "0.12.0" % "test"
+      "com.github.scalaprops" %% "scalaprops" % "0.12.1" % "test"
     )
   )
   .jvmPlatform(scalaVersions)
